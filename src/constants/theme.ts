@@ -1,65 +1,44 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
+// OroKolekta design tokens (from the Stitch "Civic Waste Platform" design system)
+export const colors = {
+  canvas: '#FFF8F8',
+  surface: '#FFFFFF',
+  surfaceLow: '#FFF0F2',
+  surfaceContainer: '#FFE8EC',
+  tint: '#FFDADA',
+  tintSoft: '#F7D6D0',
+  primary: '#C96679',
+  primaryPressed: '#B55567',
+  heading: '#7A3040',
+  body: '#4A2530',
+  muted: '#8C6470',
+  border: '#ECD3D8',
+  white: '#FFFFFF',
 
-import '@/global.css';
+  pendingText: '#C96679',
+  pendingBg: '#FCE8EC',
+  pendingBorder: '#F7CAD3',
+  reviewText: '#D97706',
+  reviewBg: '#FEF3C7',
+  reviewBorder: '#FDE68A',
+  resolvedText: '#059669',
+  resolvedBg: '#D1FAE5',
+  resolvedBorder: '#A7F3D0',
+  criticalText: '#B91C1C',
+  criticalBg: '#FEE2E2',
+  criticalBorder: '#FECACA',
 
-import { Platform } from 'react-native';
-
-export const Colors = {
-  light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
-  },
-  dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
-  },
+  bio: '#15803D',
+  residual: '#B45309',
+  recycle: '#2563EB',
 } as const;
 
-export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
-
-export const Fonts = Platform.select({
-  ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
-  },
-  default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
-  },
-  web: {
-    sans: 'var(--font-display)',
-    serif: 'var(--font-serif)',
-    rounded: 'var(--font-rounded)',
-    mono: 'var(--font-mono)',
-  },
-});
-
-export const Spacing = {
-  half: 2,
-  one: 4,
-  two: 8,
-  three: 16,
-  four: 24,
-  five: 32,
-  six: 64,
+export const fonts = {
+  regular: 'PlusJakartaSans_400Regular',
+  semibold: 'PlusJakartaSans_600SemiBold',
+  bold: 'PlusJakartaSans_700Bold',
 } as const;
 
-export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
-export const MaxContentWidth = 800;
+export const radius = { card: 14, input: 12, nav: 16, pill: 9999 } as const;
+
+export const cardShadow =
+  '0px 4px 16px -2px rgba(122, 48, 64, 0.05), 0px 1px 3px 0px rgba(122, 48, 64, 0.03)';
